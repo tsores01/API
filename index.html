@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>API</title>
+<script src="jquery-3.5.1.min.js"></script>
+<script>
+
+function APIMake() {
+ askreq = new XMLHttpRequest();
+ askreq.open("GET", "https://catfact.ninja/fact", true);
+
+ askreq.onreadystatechange = function() {
+  if ((askreq.readyState == 4) && (askreq.status == 200)) {
+   data = askreq.responseText;
+   document.getElementById("data").innerHTML = data;
+   }
+  };
+   
+ askreq.send();
+}
+</script>
+
+</head>
+
+<body onload="APIMake()">
+ Here is a random cat fact presented in JSON format: <div id="data"></div>   
+ <div>
+  <a></br>The API I selected simply chooses a fact from a database of cat facts.</br></br>
+  I found out about the API from here https://documenter.getpostman.com/view/1946054/S11HvKSz</br></br>
+  The option I used was to get a single general cat fact, while some other options included getting a list of facts or facts specifically about cat breeds.</br></br>
+  Two applications for this API could be for a tabloid website-like service where people get random facts, some of which could be cat facts. The other could be for a loading screen for a browser video game, where you could use this simple and quick API to display a random cat fact during the loading screen (especially if the video game involved cats in some way).</a>
+ </div>
+</body>
+</html>
