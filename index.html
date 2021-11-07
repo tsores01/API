@@ -6,8 +6,10 @@
 <script src="jquery-3.5.1.min.js"></script>
 <script>
 
+// function to get data from API
 function APIMake() {
  askreq = new XMLHttpRequest();
+ // cat fact generating API, found from a postman page (listed on pdf)
  askreq.open("GET", "https://catfact.ninja/fact", true);
 
  askreq.onreadystatechange = function() {
@@ -22,7 +24,7 @@ function APIMake() {
 </script>
 
 </head>
-
+ 
 <body onload="APIMake()">
  Here is a random cat fact presented in JSON format: <div id="data"></div>   
  <div>
