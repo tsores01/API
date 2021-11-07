@@ -11,7 +11,7 @@ function APIMake() {
  askreq.open("GET", "https://catfact.ninja/fact", true);
 
  askreq.onreadystatechange = function() {
-  if ((askreq.readyState == 4) && (askreq.status == 200)) {
+  if ((askreq.status == 200) && (askreq.readyState == 4)) {
    data = askreq.responseText;
    document.getElementById("data").innerHTML = data;
    }
